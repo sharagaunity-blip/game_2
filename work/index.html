@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ловец вкусняшек</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <!-- Верхняя панель показателей (по макету Figma) -->
+    <header class="hud">
+      <div class="hud-item" id="hpDisplay">100 HP</div>
+      <div class="hud-item" id="scoreDisplay">0 SCORE</div>
+    </header>
+
+    <!-- Игровое поле -->
+    <main class="canvas-container">
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Стартовый экран -->
+      <section class="overlay" id="startScreen">
+        <div class="modal">
+          <h1>Ловец вкусняшек</h1>
+          <p class="rules">
+            Двигайте кружку по столу, чтобы ловить еду (🍫, 🍙, 🍛) и получать очки.<br>
+            Уклоняйтесь от 💩 — каждое попадание отнимает <strong>25 HP</strong>!
+          </p>
+          <p class="controls-hint">
+            💻 ПК: мышь или стрелки ⬅️ ➡️<br>
+            📱 Телефон: водите пальцем по экрану
+          </p>
+          <button class="btn" id="startBtn">Начать</button>
+        </div>
+      </section>
+
+      <!-- Экран завершения игры -->
+      <section class="overlay hidden" id="gameOverScreen">
+        <div class="modal">
+          <h2>Игра окончена!</h2>
+          <p class="final-score">Ваш счёт: <span id="finalScore">0</span></p>
+          <button class="btn" id="restartBtn">Новая игра</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
